@@ -11,7 +11,7 @@ public class OutputServiceStream implements OutputService {
     }
 
     @Override
-    public void outputString(String inner) {
+    public void printLn(String inner) {
         outputStream.println(inner);
     }
 }

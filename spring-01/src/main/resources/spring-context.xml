@@ -4,17 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean name="reader" class="ru.otus.spring.service.CsvReader">
-        <constructor-arg value="/questions.csv"/>
-    </bean>
-
     <bean name="questionMapper" class="ru.otus.spring.service.QuestionMapper"/>
 
     <bean name="questionService" class="ru.otus.spring.service.QuestionServiceImpl">
-        <constructor-arg type="ru.otus.spring.service.Reader" ref="reader"/>
-        <constructor-arg type="ru.otus.spring.service.QuestionMapper" ref="questionMapper"/>
+        <constructor-arg value="/questions.csv"/>
     </bean>
-
 
     <bean name="outputService" class="ru.otus.spring.service.OutputServiceStream">
         <constructor-arg value="#{T(java.lang.System).out}" />

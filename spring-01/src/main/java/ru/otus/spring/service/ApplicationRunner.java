@@ -19,6 +19,6 @@ public class ApplicationRunner {
         List<Question> questions = questionService.getAll();
         questions.stream()
                 .map(question -> questionMapper.toString(question) + System.lineSeparator())
-                .forEach(outputService::outputString);
+                .forEach(outputService::printLn);
     }
 }
