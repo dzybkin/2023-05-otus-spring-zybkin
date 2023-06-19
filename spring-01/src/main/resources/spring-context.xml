@@ -11,7 +11,7 @@
     </bean>
 
     <bean name="outputService" class="ru.otus.spring.service.OutputServiceStream">
-        <constructor-arg value="#{T(java.lang.System).out}" />
+        <constructor-arg index="0" value="#{T(java.lang.System).out}" />
     </bean>
 
     <bean name="applicationRunner" class="ru.otus.spring.service.ApplicationRunner">
