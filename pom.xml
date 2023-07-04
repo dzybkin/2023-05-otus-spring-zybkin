@@ -12,5 +12,6 @@
 
     <modules>
         <module>spring-01</module>
+        <module>spring-02</module>
     </modules>
 </project>
