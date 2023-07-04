@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="questionMapper" class="ru.otus.spring.service.QuestionMapper"/>
+
+    <bean name="questionService" class="ru.otus.spring.service.QuestionServiceImpl">
+        <constructor-arg value="/questions.csv"/>
+    </bean>
+
+    <bean name="IOService" class="ru.otus.spring.service.IOServiceStream">
+        <constructor-arg index="0" value="#{T(java.lang.System).out}" />
+    </bean>
+
+    <bean name="applicationRunner" class="ru.otus.spring.service.ApplicationRunner">
+        <constructor-arg type="ru.otus.spring.service.QuestionService" ref="questionService"/>
+        <constructor-arg type="ru.otus.spring.service.QuestionMapper" ref="questionMapper"/>
+        <constructor-arg type="ru.otus.spring.service.IOService" ref="IOService"/>
+    </bean>
+
+</beans>
